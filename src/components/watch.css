@@ -1,0 +1,117 @@
+.container {
+  min-height: 100vh;
+}
+
+form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  border: 1px solid black;
+  padding: 0.5em;
+  text-decoration: none;
+  color: black;
+  align-self: flex-end;
+  margin-left: 20px;
+}
+
+.input-box {
+  margin-left: 20px;
+}
+
+.input-box label {
+  display: block;
+}
+.input {
+  padding: 0.5em;
+  border: 1px solid black;
+}
+
+.watch {
+  border-radius: 50%;
+  background: #fff no-repeat center;
+  background-size: 88%;
+  display: inline-block;
+  height: 10em;
+  width: 10em;
+}
+
+.watch.simple:after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+
+.watch-container {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.city-box {
+  background: #fff no-repeat center;
+  margin: 20px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hours {
+  background: #000;
+  height: 10%;
+  left: 50%;
+  position: absolute;
+  top: 33%;
+  transform-origin: 50% 100%;
+  width: 0.3%;
+  transform: rotate(42deg);
+}
+
+.seconds {
+  background: red;
+  height: 12%;
+  left: 50%;
+  position: absolute;
+  top: 31%;
+  transform-origin: 50% 80%;
+  width: 0.2%;
+  z-index: 8;
+}
+
+.hours-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.delete-btn {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 3px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.delete-btn:hover {
+  background-color: aquamarine;
+  color: #fff;
+}
+
+.watch {
+  margin: 2rem 1rem;
+}

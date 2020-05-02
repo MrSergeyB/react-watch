@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
+import InputForm from "./components/InputForm";
+import Watches from "./components/Watches";
 
 function App() {
+  const [inputsData, setInputsData] = useState([
+    {
+      city: "Tokyo",
+      timeZone: 0,
+    },
+    {
+      city: "London",
+      timeZone: 7,
+    },
+  ]);
+
+  const handleSubmit = (city, timeZone) => {
+    const stringToNumber = parseInt(timeZone);
+    setInputsData([
+      ...inputsData,
+      {
+        city,
+        timeZone: stringToNumber,
+      },
+    ]);
+    console.log(inputsData);
+  };
+
+  const removeClock = (city) => {
+    const filteredClocks = inputsData.filter((input) => {
+      return input.city !== city;
+    });
+    setInputsData([...filteredClocks]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <InputForm handleSubmit={handleSubmit} />
+      <Watches inputsData={inputsData} removeClock={removeClock} />
     </div>
   );
 }
